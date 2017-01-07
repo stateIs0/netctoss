@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>netctoss_cxs</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>find</servlet-name>
+  	<servlet-class>web.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>find</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--声明发生哪种异常时转发到那个错误页面. 
+  	注意:此处错误页面的路径应该写绝对路径,而tomcat会主动帮网名加上项目名,所以此处的绝对路径
+  	就不要自己再写项目名了,避免重复. -->
+  <!--1.按照异常类型声明  -->
+<!--   <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page> -->
+  <!--2.按照异常编号声明  -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>405</error-code>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/WEB-INF/error.jsp</location>
+  </error-page>
+  
+  
+    <context-param>
+  	<param-name>size</param-name>
+  	<param-value>10</param-value>
+    </context-param>
+  <!--登陆检查过滤器.  -->
+  <filter>
+  	<filter-name>file</filter-name>
+  	<filter-class>web.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>file</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 也要一年零4个月. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
